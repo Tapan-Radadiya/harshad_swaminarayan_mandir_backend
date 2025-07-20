@@ -429,6 +429,10 @@ export interface ApiGalleryGroupGalleryGroup
     group_key: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+    image_managers: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::image-manager.image-manager'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -460,6 +464,10 @@ export interface ApiImageManagerImageManager
       Schema.Attribute.Private;
     gallery_group: Schema.Attribute.Relation<
       'oneToOne',
+      'api::gallery-group.gallery-group'
+    >;
+    gallery_group_fk: Schema.Attribute.Relation<
+      'manyToOne',
       'api::gallery-group.gallery-group'
     >;
     image_type: Schema.Attribute.Enumeration<
@@ -502,7 +510,7 @@ export interface ApiMandirEventMandirEvent extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Blocks &
+    description: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

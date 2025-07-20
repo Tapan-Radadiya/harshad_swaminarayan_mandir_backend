@@ -23,6 +23,12 @@
       "type": "string",
       "required": true,
       "unique": true
+    },
+    "image_managers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::image-manager.image-manager",
+      "mappedBy": "gallery_group_fk"
     }
   }
 }
