@@ -8,7 +8,7 @@ export default (config, { strapi }) => {
         duration: 60000, // 1 minute
         errorMessage: 'Too many requests from this IP. Please try again later.',
         id: (ctx) => ctx.ip,
-        max: 100, // limit each IP to 60 requests per minute
+        max: 100, // limit each IP to 100 requests per minute
         headers: {
             remaining: 'Rate-Limit-Remaining',
             reset: 'Rate-Limit-Reset',

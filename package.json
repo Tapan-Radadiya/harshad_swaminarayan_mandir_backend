@@ -15,10 +15,13 @@
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.850.0",
     "@strapi/plugin-cloud": "5.18.1",
     "@strapi/plugin-users-permissions": "5.18.1",
+    "@strapi/provider-upload-aws-s3": "^5.18.1",
     "@strapi/strapi": "5.18.1",
     "better-sqlite3": "11.3.0",
+    "dotenv": "^17.2.0",
     "koa-ratelimit": "^6.0.0",
     "lru-cache": "^11.1.0",
     "react": "^18.0.0",

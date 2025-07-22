@@ -1,5 +1,31 @@
-export default [
-  'global::rate-limiter',
+module.exports = [
+  {
+    name: `strapi::security`,
+    config: {
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          'connect-src': ["'self", 'https:'],
+          'img-src': [
+            "'self'",
+            "data:",
+            "blob:",
+            "dl.airtable.com",
+            "harshad-swaminarayan-mandir.s3.ap-south-1.amazonaws.com"
+          ],
+          'media-src': [
+            "'self'",
+            'data:',
+            'blob:',
+            'dl.airtable.com',
+            "harshad-swaminarayan-mandir.s3.ap-south-1.amazonaws.com"
+          ],
+          upgradeInsecureRequests: null,
+        }
+      }
+    }
+  },
+  // 'global::rate-limiter',
   'strapi::logger',
   'strapi::errors',
   'strapi::security',
@@ -10,4 +36,4 @@ export default [
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
-];
+]
