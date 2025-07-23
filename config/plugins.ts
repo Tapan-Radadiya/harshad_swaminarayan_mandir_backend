@@ -11,13 +11,19 @@ module.exports = ({ env }) => {
                     secretAccessKey: env('AWS_SECRET_ACCESS_KEY'),
                     region: env('AWS_REGION'),
                     params: {
-                        ACL: env('AWS_ACL', 'public-read'),
                         Bucket: env('AWS_BUCKET'),
-                    }
+                        ACL: 'public-read',
+                    },
                 },
+                baseUrl: `https://${env('AWS_BUCKET')}.s3.${env('AWS_REGION')}.amazonaws.com`,
+                basePath: '',
                 actionOptions: {
-                    upload: {},
-                    uploadStream: {},
+                    upload: {
+                        ACL: 'public-read',
+                    },
+                    uploadStream: {
+                        ACL: 'public-read',
+                    },
                     delete: {},
                 }
             },

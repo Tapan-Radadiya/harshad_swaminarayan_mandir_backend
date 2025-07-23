@@ -10,15 +10,15 @@ module.exports = [
             "'self'",
             "data:",
             "blob:",
-            "dl.airtable.com",
-            "harshad-swaminarayan-mandir.s3.ap-south-1.amazonaws.com"
+            "https://market-assets.strapi.io",
+            "https://harshad-swaminarayan-mandir.s3.ap-south-1.amazonaws.com"
           ],
           'media-src': [
             "'self'",
             'data:',
             'blob:',
-            'dl.airtable.com',
-            "harshad-swaminarayan-mandir.s3.ap-south-1.amazonaws.com"
+            'https://market-assets.strapi.io',
+            "https://harshad-swaminarayan-mandir.s3.ap-south-1.amazonaws.com"
           ],
           upgradeInsecureRequests: null,
         }
@@ -28,7 +28,6 @@ module.exports = [
   // 'global::rate-limiter',
   'strapi::logger',
   'strapi::errors',
-  'strapi::security',
   'strapi::cors',
   'strapi::poweredBy',
   'strapi::query',
